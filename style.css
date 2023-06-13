@@ -1,0 +1,135 @@
+body {
+
+    background-image: linear-gradient(145deg, #cc2255, #ffd700);
+
+   /*
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(90,121,9,1) 0%, rgba(0,212,255,1) 100%);
+    */
+
+    /*background-image: linear-gradient(145deg, #ee82ee, slateblue, #ffd86a, purple);*/
+
+   /* background: linear-gradient(45deg, #9890e3, #b1f4cf);*/
+
+    /*background: linear-gradient(to right, #94525c, #14aad7);*/
+
+    font-family: 'Comic Sans MS',
+    'Chalkboard SE', 'Comic Neue', sans-serif;
+}
+
+h1 {
+    color: blueviolet;
+    text-align: center;
+    /*text-shadow: 5px 2px 4px grey;*/
+}
+
+h4 {
+    color: black;
+
+}
+
+h5 {
+    color: blueviolet;
+    margin: 5px;
+}
+
+#header {
+    font-size: 1.2em;
+    line-height:65px;
+    letter-spacing: 2px;
+    text-align: left;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 400%;
+    animation: move 5s ease infinite;
+    background-image: linear-gradient( 68.7deg,  rgba(29,173,235,1) 13.2%, rgba(137,149,250,1) 29.8%, rgba(229,109,212,1) 48.9%, rgba(255,68,128,1) 68.2%, rgba(255,94,0,1) 86.4% );
+}
+
+@keyframes move {
+    0%,100%{
+        background-position: 200% 0%;
+    }
+
+    50%{
+        background-position: 0% 200%;
+    }
+}
+}
+
+#textarea_block, #input_block{
+    display: block;
+    margin: auto;
+}
+
+#otherButtons {
+    background-color: blueviolet;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+#button_block {
+    /*margin-left: 35%;*/
+    margin: auto;
+    display: inline-flex;
+
+}
+
+#numberInput {
+    margin: 5px;
+}
+
+.btn {
+    margin: 5px;
+}
+
+#textarea {
+    height: 500px;
+    width: 80%;
+}
+
+#checkbox {
+    margin: 5px;
+    height: 20px;
+    width: 20px;
+}
+
+.pwdRadio {
+    margin: 10px;
+    height: 20px;
+    width: 20px;
+}
+
+#image {
+    width: 200px;
+    height: 200px;
+    margin-left: 10px;
+}
+
+#character {
+    text-align: left;
+    font-size: 1 em;
+    padding-left: 10px;
+}
+
+.color {
+    height: 120px;
+    width: 350px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+label {
+    /*font-family: 'Comic Sans MS',
+'Chalkboard SE', 'Comic Neue', sans-serif;*/
+}
+
+p {
+    font-size: 0.6em;
+    text-align: center;
+    padding: 3px;
+}
+
+

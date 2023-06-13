@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Randomizer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="header/css/normalize.css">
+    <link rel="stylesheet" href="header/css/style.css">
+
+    <script defer src="header/js/main.js"></script>
+
+    <link rel="stylesheet" href="footer/css/footer.css">
+
+    <script>
+        function replace_spaces(event) {
+            event.target.value = event.target.value.replace(' ', '_');
+
+            var textarea = document.getElementById("textarea");
+            var counter = document.getElementById("wordsCounter");
+            var header = document.getElementById("counterHeader");
+
+            if (textarea.value != '') {
+                var words = textarea.value.match(/[^\s]+/g);
+                header.removeAttribute("hidden", true);
+                counter.innerHTML = words.length;
+            } else {
+                header.setAttribute("hidden", true);
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+<div hidden="hidden" id="alert_block" class="alert alert-primary alert-dismissible fade show" role="alert">
+    <strong id="alert">Please, enter data!</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<!-- header markup starts -->
+<header class="header">
+    <div class="container header__container">
+        <button class="header__burger-btn" id="burger">
+            <span></span><span></span><span></span>
+        </button>
+        <a href="#" class="logo">
+            <img class="logo__img" src="/header/img/logo_transparent.png" alt="Logo">
+        </a>
+        <nav class="menu">
+            <ul class="menu__list">
+                <li class="menu__item">
+                    <a class="menu__link" href="/how_to_use.html">
+                        How to use
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href="/Randomizer/about_developer.html">
+                       About developer
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href="#">
+                       Donate
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<!-- header markup ends -->
+
+<div>
+    <h1>Randomizer</h1>
+</div>
+
+<div><h4 align="center">Enter a number or participations</h4></div>
+
+<div align="center" id="textarea_block">
+
+    <textarea id="textarea" placeholder ="Please,enter any list of items (parcipitations) or any number to get random value.To enter the next item of the list use Enter key" oninput="replace_spaces(event)"></textarea>
+
+</div>
+
+<div align="center" hidden="hidden" id="quantityDiv">
+    <label> Enter quantity <input class="form-control col-4" id="quantity" type="text"/></label>
+</div>
+
+<div align="center" hidden="hidden" id="passwordDiv">
+    <label> Enter password length <input class="form-control col-4" id="pwd_len" type="text"/></label>
+
+    <div>
+        <label><input type="radio" class="pwdRadio" name="radio" value="light" id="light"/>Light</label>
+        <label><input type="radio" class="pwdRadio" name="radio" value="middle" id="middle"/>Middle</label>
+        <label><input type="radio" class="pwdRadio" name="radio" value="difficult" id="difficult"/>Difficult</label>
+    </div>
+</div>
+
+<div id="button_block col-sm col-md col-xs" >
+
+    <button class="btn btn-primary" id="number">Random number <i class="fa-solid fa-arrow-down-1-9"></i></button>
+    <button class="btn btn-primary" id="item">Random item <i class="fa-solid fa-shuffle"></i></button>
+    <button class="btn btn-outline-primary" onclick="showAllButtons()" ondblclick="hideAllButtons()">Other functions</button>
+    <button type="reset" class="btn btn-outline-danger" id="reset">Reset</button>
+
+    <div class="col-8" id="otherButtons" hidden="hidden">
+        <button class="btn btn-warning" id="list">Random order <i class="fa-solid fa-list-ul"></i></button>
+        <button class="btn btn-success" id="severalItems" onclick="showInput()"> Several random items <i class="fa-solid fa-list-check"></i></button>
+        <button class="btn btn-secondary" id="password" onclick="showCheckboxs()">Random password <i class="fa-solid fa-key"></i></button>
+        <button class="btn btn-info" id="color">Random color <i class="fa-solid fa-palette"></i></button>
+        <button class="btn btn-light" id="smile">Random smile <i class="fa-solid fa-face-grin"></i></button>
+        <button class="btn btn-dark" id="animImage">Random Naruto character <i class="fa-solid fa-user-ninja"></i></button>
+    </div>
+</div>
+
+<hr width="40%" align="left"/>
+<h5 id="counterHeader" hidden="hidden">Number of participants: <span id="wordsCounter"></span></h5>
+
+<aside>
+    <div class="form-inline">
+        <label>
+            <input class="form-control" id="checkbox"type="checkbox" oninput="showInputs()"/> <span class="badge badge-warning">Use number range</span>
+        </label>
+    </div>
+
+    <div class="form-inline" hidden="hidden" id="numberInput">
+        <label> From &nbsp; <input class="form-control col-4" id="firstNumber" type="text"/></label>
+        <label> To &nbsp; <input class="form-control col-4" id="secondNumber" type="text"/></label>
+        <button class="btn btn-light" id="range"> Get random number <i class="fa-solid fa-shuffle"></i></button>
+        <button class="btn btn-light" id="several_num_in_range">Get several random numbers <i class="fa-solid fa-shuffle"></i></button>
+    </div>
+</aside>
+
+<div class="container-fluid"><h2 id="header"></h2></div>
+
+<div><h2 id="smileHeader" hidden="hidden"></h2></div>
+
+<div class="color" hidden="hidden"></div>
+
+<div><img src="" id = "image" alt="it is a photo!" hidden="hidden"><p id="character"></p></div>
+
+<footer>
+    <div class="container">
+        <p><b>by Andrey Sosnytskyi</b></p>
+        <small>All rights reserved (2023)</small>
+    </div>
+</footer>
+
+
+<script>
+    function showInput(){
+        document.getElementById("quantityDiv").removeAttribute("hidden", true);
+    }
+</script>
+
+<script>
+    function showCheckboxs(){
+        document.getElementById("passwordDiv").removeAttribute("hidden", true);
+    }
+</script>
+
+<script>
+    function showAllButtons(){
+        document.getElementById("otherButtons").removeAttribute("hidden", true);
+    }
+
+    function hideAllButtons(){
+        document.getElementById("otherButtons").setAttribute("hidden", true);
+    }
+</script>
+
+<script>
+    function showInputs(){
+        var checkbox = document.getElementById("checkbox");
+
+        if(checkbox.checked){
+            document.getElementById("numberInput").removeAttribute("hidden", true);
+        }
+        else{
+            document.getElementById("numberInput").setAttribute("hidden", true);
+        }
+    }
+</script>
+<script src="script.js"></script>
+</body>
+</html>
