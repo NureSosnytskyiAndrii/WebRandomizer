@@ -35,16 +35,10 @@
             }
         }
     </script>
+
 </head>
 
 <body>
-
-<div hidden="hidden" id="alert_block" class="alert alert-primary alert-dismissible fade show" role="alert">
-    <strong id="alert">Please, enter data!</strong>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
 
 <!-- header markup starts -->
 <header class="header">
@@ -78,6 +72,13 @@
 </header>
 <!-- header markup ends -->
 
+<div hidden="hidden" id="alert_block" class="alert alert-primary alert-dismissible fade show" role="alert">
+    <strong id="alert">Please, enter data!</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
 <div>
     <h1>Randomizer</h1>
 </div>
@@ -86,7 +87,7 @@
 
 <div align="center" id="textarea_block">
 
-    <textarea id="textarea" placeholder ="Please,enter any list of items (parcipitations) or any number to get random value.To enter the next item of the list use Enter key" oninput="replace_spaces(event)"></textarea>
+    <textarea id="textarea" placeholder ="Please,enter any list of items (parcipitations) or any number to get random value.To enter the next item of the list use Enter key" oninput="replace_spaces(event)" class="form-control mb-2"></textarea>
 
 </div>
 
@@ -106,18 +107,18 @@
 
 <div id="button_block col-sm col-md col-xs" >
 
-    <button class="btn btn-primary" id="number">Random number <i class="fa-solid fa-arrow-down-1-9"></i></button>
-    <button class="btn btn-primary" id="item">Random item <i class="fa-solid fa-shuffle"></i></button>
+    <button class="btn btn-primary" id="number" data-toggle="modal" data-target="#exampleModal">Random number <i class="fa-solid fa-arrow-down-1-9"></i></button>
+    <button class="btn btn-primary" id="item" data-toggle="modal" data-target="#exampleModal">Random item <i class="fa-solid fa-shuffle"></i></button>
     <button class="btn btn-outline-primary" onclick="showAllButtons()" ondblclick="hideAllButtons()">Other functions</button>
     <button type="reset" class="btn btn-outline-danger" id="reset">Reset</button>
 
     <div class="col-8" id="otherButtons" hidden="hidden">
-        <button class="btn btn-warning" id="list">Random order <i class="fa-solid fa-list-ul"></i></button>
-        <button class="btn btn-success" id="severalItems" onclick="showInput()"> Several random items <i class="fa-solid fa-list-check"></i></button>
-        <button class="btn btn-secondary" id="password" onclick="showCheckboxs()">Random password <i class="fa-solid fa-key"></i></button>
-        <button class="btn btn-info" id="color">Random color <i class="fa-solid fa-palette"></i></button>
-        <button class="btn btn-light" id="smile">Random smile <i class="fa-solid fa-face-grin"></i></button>
-        <button class="btn btn-dark" id="animImage">Random Naruto character <i class="fa-solid fa-user-ninja"></i></button>
+        <button class="btn btn-warning" id="list" data-toggle="modal" data-target="#exampleModal">Random order <i class="fa-solid fa-list-ul"></i></button>
+        <button class="btn btn-warning" id="severalItems" onclick="showInput()" data-toggle="modal" data-target="#exampleModal"> Several random items <i class="fa-solid fa-list-check"></i></button>
+        <button class="btn btn-warning" id="password" onclick="showCheckboxs()" data-toggle="modal" data-target="#exampleModal">Random password <i class="fa-solid fa-key"></i></button>
+        <button class="btn btn-warning" id="color">Random color <i class="fa-solid fa-palette"></i></button>
+        <button class="btn btn-warning" id="smile">Random smile <i class="fa-solid fa-face-grin"></i></button>
+        <button class="btn btn-warning" id="animImage">Random Naruto character <i class="fa-solid fa-user-ninja"></i></button>
     </div>
 </div>
 
@@ -134,12 +135,34 @@
     <div class="form-inline" hidden="hidden" id="numberInput">
         <label> From &nbsp; <input class="form-control col-4" id="firstNumber" type="text"/></label>
         <label> To &nbsp; <input class="form-control col-4" id="secondNumber" type="text"/></label>
-        <button class="btn btn-light" id="range"> Get random number <i class="fa-solid fa-shuffle"></i></button>
-        <button class="btn btn-light" id="several_num_in_range">Get several random numbers <i class="fa-solid fa-shuffle"></i></button>
+        <button class="btn btn-light" id="range" data-toggle="modal" data-target="#exampleModal"> Get random number <i class="fa-solid fa-shuffle"></i></button>
+        <button class="btn btn-light" id="several_num_in_range" data-toggle="modal" data-target="#exampleModal">Get several random numbers <i class="fa-solid fa-shuffle"></i></button>
     </div>
 </aside>
 
-<div class="container-fluid"><h2 id="header"></h2></div>
+<!-- Result print start -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Winner</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h2 id="header"></h2>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Result print end -->
+
+<!--<div class="container-fluid"><h2 id="header"></h2></div>-->
 
 <div><h2 id="smileHeader" hidden="hidden"></h2></div>
 
