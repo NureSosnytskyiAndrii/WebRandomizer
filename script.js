@@ -1,58 +1,60 @@
 /* variables */
 
-var textarea = document.getElementById("textarea");
+const textarea = document.getElementById("textarea");
 
-var number = document.getElementById("number");
+const number = document.getElementById("number");
 
-var range = document.getElementById("range");
+const range = document.getElementById("range");
 
-var sevNumbInRange = document.getElementById("several_num_in_range");
+const sevNumbInRange = document.getElementById("several_num_in_range");
 
-var item = document.getElementById("item");
+const item = document.getElementById("item");
 
-var list = document.getElementById("list");
+const list = document.getElementById("list");
 
-var severalItems = document.getElementById("severalItems");
+const severalItems = document.getElementById("severalItems");
 
-var quantity = document.getElementById("quantity");
+const quantity = document.getElementById("quantity");
 
-var quantityDiv = document.getElementById("quantityDiv");
+const quantityDiv = document.getElementById("quantityDiv");
 
-var pwd_len = document.getElementById("pwd_len");
+const pwd_len = document.getElementById("pwd_len");
 
-var password = document.getElementById("password");
+const password = document.getElementById("password");
 
-var radio = document.querySelectorAll(".pwdRadio");
+const radio = document.querySelectorAll(".pwdRadio");
 
-var passwordDiv = document.getElementById("passwordDiv");
+const passwordDiv = document.getElementById("passwordDiv");
 
-var color = document.getElementById("color");
+const color = document.getElementById("color");
 
-var coloredDiv = document.querySelector(".color");
+const coloredDiv = document.querySelector(".color");
 
-var smile = document.getElementById("smile");
+const smile = document.getElementById("smile");
 
-var smileHeader = document.getElementById("smileHeader");
+const smileHeader = document.getElementById("smileHeader");
 
-var image = document.getElementById("image");
+const header = document.getElementById("header");
 
-var character = document.getElementById("character");
+const counterHeader = document.getElementById("counterHeader");
 
-var animImage = document.getElementById("animImage");
+const firstNumber = document.getElementById("firstNumber");
 
-var header = document.getElementById("header");
+const secondNumber = document.getElementById("secondNumber");
 
-var counterHeader = document.getElementById("counterHeader");
+const alert = document.getElementById("alert");
 
-var firstNumber = document.getElementById("firstNumber");
+const alertBlock = document.getElementById("alert_block");
 
-var secondNumber = document.getElementById("secondNumber");
+const reset = document.getElementById("reset");
 
-var alert = document.getElementById("alert");
+const titleEl = document.querySelector(".title");
 
-var alertBlock = document.getElementById("alert_block");
+const memeEl = document.querySelector(".meme");
 
-var reset = document.getElementById("reset");
+const authorEl = document.querySelector(".author");
+
+const generateMemeBtnEl = document.querySelector(".generateMemeBtn");
 
 
 var RandNumber = 0;
@@ -397,22 +399,21 @@ smile.addEventListener("click", function () {
 
 });
 
-/* Random Naruto character */
+/* Meme Generator */
 
-animImage.addEventListener("click", function () {
-    image.removeAttribute("hidden", true);
-    var src = ["https://static.wikia.nocookie.net/naruto/images/3/34/Sasuke_Part_1.jpg/revision/latest?cb=20210404192311&path-prefix=ru", "https://static.wikia.nocookie.net/naruto/images/0/09/Naruto_newshot.png/revision/latest?cb=20210213224703&path-prefix=ru", "https://static.wikia.nocookie.net/naruto/images/6/64/Sakura_Part_1.png/revision/latest?cb=20210224205026&path-prefix=ru", "https://static.wikia.nocookie.net/naruto/images/2/27/Kakashi_Hatake.png/revision/latest?cb=20210214190655&path-prefix=ru", "https://static.wikia.nocookie.net/naruto/images/9/97/Hinata.png/revision/latest?cb=20150215152718&path-prefix=ru", "https://static.wikia.nocookie.net/naruto/images/b/bb/Itachi.png/revision/latest?cb=20210225204731&path-prefix=ru", "https://static.wikia.nocookie.net/naruto/images/0/0c/Madara_img2.png/revision/latest?cb=20210227095726&path-prefix=ru", "https://static.wikia.nocookie.net/naruto/images/4/46/Nagato.png/revision/latest?cb=20200327005137&path-prefix=ru", "https://static.wikia.nocookie.net/naruto/images/4/4a/Obito_Uchiha.png/revision/latest?cb=20210214221823&path-prefix=ru", "https://static.wikia.nocookie.net/naruto/images/9/9a/Sarada_Infobox.png/revision/latest?cb=20180723152825&path-prefix=ru", "https://static.wikia.nocookie.net/naruto/images/4/4a/Gaara_p1.png/revision/latest?cb=20190310163727&path-prefix=ru", "https://static.wikia.nocookie.net/naruto/images/2/21/Profile_Jiraiya.PNG/revision/latest?cb=20170818131513&path-prefix=ru", "https://static.wikia.nocookie.net/naruto/images/7/71/Minato_Namikaze.png/revision/latest?cb=20200324174322&path-prefix=ru", "https://static.wikia.nocookie.net/naruto/images/9/97/Rock_Lee_Part_I.png/revision/latest?cb=20190205134607&path-prefix=ru", "https://static.wikia.nocookie.net/naruto/images/1/14/Orochimaru_Infobox.png/revision/latest?cb=20151017160235&path-prefix=ru", "https://static.wikia.nocookie.net/naruto/images/8/8e/Neji_Part_I_Screenshot.png/revision/latest?cb=20210313213316&path-prefix=ru", "https://static.wikia.nocookie.net/naruto/images/4/44/Shikamaru_Part_I.png/revision/latest?cb=20180225131949&path-prefix=ru", "https://static.wikia.nocookie.net/naruto/images/8/89/Konohamaru_p1.png/revision/latest?cb=20150215165046&path-prefix=ru", "https://static.wikia.nocookie.net/naruto/images/6/68/New_Boruto_infobox.png/revision/latest?cb=20220319093513&path-prefix=ru", "https://static.wikia.nocookie.net/naruto/images/0/07/Sai_Infobox.png/revision/latest?cb=20190419133920&path-prefix=ru", "https://static.wikia.nocookie.net/naruto/images/c/c9/Kabuto_Part_1.png/revision/latest?cb=20170906124719&path-prefix=ru", "https://static.wikia.nocookie.net/naruto/images/5/5c/Mitsuki.png/revision/latest?cb=20180830180405&path-prefix=ru", "https://static.wikia.nocookie.net/naruto/images/f/f7/Yamato_newshot.png/revision/latest?cb=20190202094154&path-prefix=ru", "https://static.wikia.nocookie.net/naruto/images/9/9c/Shino.png/revision/latest?cb=20170831172651&path-prefix=ru"];
+// Meme Api GitHub Link : https://github.com/D3vd/Meme_Api
+async function generateMeme(){
+    const response = await fetch("https://meme-api.com/gimme/wholesomememes");
+    const data = await response.json();
+    titleEl.innerHTML = data.title;
+    memeEl.setAttribute("src",data.url);
+    authorEl.innerHTML = `Meme Created By ${data.author}`
+    console.log(data);
+}
 
-    var characters = ["Sasuke Uchiha", "Naruto Uzumaki", "Sakura Haruno", "Kakashi Hatake", "Hinata Hyuga", "Itachi Uchiha", "Madara Uchiha", "Nagato", "Obito Uchiha", "Sarada Uchiha", "Gaara", "Jiraiya", "Minato Namikaze", "Rock Lee", "Orochimaru", "Neji Hyuga", "Nara Shikamaru", "Sarutobi Konohamaru", "Uzumaki Boruto", "Sai", "Yakushi Kabuto", "Mitsuki", "Yamato", "Aburame Shino"];
+generateMemeBtnEl.addEventListener("click",generateMeme);
 
-    var num = Math.floor(Math.random() * src.length);
-
-    image.src = src[num];
-
-    textarea.value = "See_character_below!";
-    character.removeAttribute("hidden", true);
-    character.innerHTML = characters[num];
-});
+generateMeme();
 
 reset.addEventListener("click", function () {
     textarea.value = null;
@@ -421,8 +422,6 @@ reset.addEventListener("click", function () {
     header.setAttribute("hidden", true);
     coloredDiv.setAttribute("hidden", true);
     smileHeader.setAttribute("hidden", true);
-    image.setAttribute("hidden", true);
-    character.setAttribute("hidden", true);
     quantityDiv.setAttribute("hidden", true);
     quantity.value = null;
     passwordDiv.setAttribute("hidden", true);

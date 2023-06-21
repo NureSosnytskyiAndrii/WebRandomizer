@@ -18,7 +18,7 @@ body {
 }
 
 h1 {
-    color: blueviolet;
+    color: #1446a0;
     text-align: center;
     /*text-shadow: 5px 2px 4px grey;*/
 }
@@ -29,7 +29,7 @@ h4 {
 }
 
 h5 {
-    color: blueviolet;
+    color: #1446a0;
     margin: 5px;
 }
 
@@ -56,7 +56,7 @@ h5 {
         background-position: 0% 200%;
     }
 }
-}
+
 
 #textarea_block, #input_block{
     display: block;
@@ -64,7 +64,7 @@ h5 {
 }
 
 #otherButtons {
-    background-color: blueviolet;
+    background-color: #1446a0;
     border-radius: 10px;
     margin-left: 5px;
 }
@@ -99,18 +99,6 @@ h5 {
     margin: 10px;
     height: 20px;
     width: 20px;
-}
-
-#image {
-    width: 200px;
-    height: 200px;
-    margin-left: 10px;
-}
-
-#character {
-    text-align: left;
-    font-size: 1 em;
-    padding-left: 10px;
 }
 
 .color {
